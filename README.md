@@ -9,6 +9,14 @@ ________________________________________________________________________________
 - ResNet34 introduced a new block layer and layer-connection pattern, residual blocks, and identity connection respectively.
 - The `residual block` in ResNet34 consists of blocks of two identical convolutional layers without a pooling layer. Each block has an `identity connection` that creates a parallel path between the input of the residual block and its output.
 
+## The following code snippet shows how a residual block can be coded in TF.Keras by using the `functional API` method:
+>>> shortcut = x
+>>> x = layers.Conv2D(64, kernel_size=(3,3), strides=(1,1), padding="same")(x)
+>>> x = ReLU()(x)
+>>> x = layers.Conv2D(64, kernel_size=(3,3), strides=(1,1), padding="same")(x)
+>>> x = ReLU()(x)
+>>> x = layers.add([shortcut, x])
+
 ![download](https://user-images.githubusercontent.com/59202700/207303627-1aed67c6-e4ad-4ca8-a639-20dc151670ab.png)
 
 - The `ResNet` architecture take as input a (224, 224, 3) vector, an RGB image (3 channel) of 224 (height) X 224 (width) pixels. The first layer is a basic convolutional layer, consisting of a convolutional using a fairly large filter size of 7x7, the output (feature maps) is then reduced in size by a max pooling layer.
