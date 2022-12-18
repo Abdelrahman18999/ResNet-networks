@@ -12,12 +12,12 @@ ________________________________________________________________________________
 ## The following code snippet shows how a residual block can be coded in TF.Keras by using the `functional API` method:
 ```
 
-shortcut = x
+shortcut = x    # Remember the input to the block
 x = layers.Conv2D(64, kernel_size=(3,3), strides=(1,1), padding="same")(x)
 x = ReLU()(x)
 x = layers.Conv2D(64, kernel_size=(3,3), strides=(1,1), padding="same")(x)
-x = ReLU()(x)
-x = layers.add([shortcut, x])
+x = ReLU()(x)     # the output of the convolutional sequence
+x = layers.add([shortcut, x])   # Matrix addition of the input to the output
 
 ```
 
