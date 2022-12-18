@@ -56,3 +56,7 @@ def bottleneck_block(n_filters, x):
   
 ``` 
 ![bottleneck](https://user-images.githubusercontent.com/59202700/208291809-9527d5d9-2d2d-4083-9c29-b4c14dac8729.png)
+
+_________________________________________________________________________________________________________________________________________________________
+
+__Residual blocks introduced the concepts of `representational power` and `representational equivalence`. `Representaional Power is a measure of how powerful a block is as a feature extractor`. `Representational equivalence is the idea that a block can be factoredinto a lower computational complexity, while maintaining representational power`. The design of the residual bottleneck block was demonstrated to maintain representational power of the `ResNet34` block, with a lower computational complexity.__
