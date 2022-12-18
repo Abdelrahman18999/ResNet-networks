@@ -12,12 +12,12 @@ ________________________________________________________________________________
 ## The following code snippet shows how a residual block can be coded in TF.Keras by using the `functional API` method:
 ```
 
->>> shortcut = x
->>> x = layers.Conv2D(64, kernel_size=(3,3), strides=(1,1), padding="same")(x)
->>> x = ReLU()(x)
->>> x = layers.Conv2D(64, kernel_size=(3,3), strides=(1,1), padding="same")(x)
->>> x = ReLU()(x)
->>> x = layers.add([shortcut, x])
+shortcut = x
+x = layers.Conv2D(64, kernel_size=(3,3), strides=(1,1), padding="same")(x)
+x = ReLU()(x)
+x = layers.Conv2D(64, kernel_size=(3,3), strides=(1,1), padding="same")(x)
+x = ReLU()(x)
+x = layers.add([shortcut, x])
 
 ```
 
