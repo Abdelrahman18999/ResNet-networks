@@ -54,4 +54,5 @@ def bottleneck_block(n_filters, x):
   x = layers.add([shortcut, x])
   return x
   
+``` 
 ![bottleneck](https://user-images.githubusercontent.com/59202700/208291809-9527d5d9-2d2d-4083-9c29-b4c14dac8729.png)
