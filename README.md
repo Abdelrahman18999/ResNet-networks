@@ -10,12 +10,16 @@ ________________________________________________________________________________
 - The `residual block` in ResNet34 consists of blocks of two identical convolutional layers without a pooling layer. Each block has an `identity connection` that creates a parallel path between the input of the residual block and its output.
 
 ## The following code snippet shows how a residual block can be coded in TF.Keras by using the `functional API` method:
+```
+
 >>> shortcut = x
 >>> x = layers.Conv2D(64, kernel_size=(3,3), strides=(1,1), padding="same")(x)
 >>> x = ReLU()(x)
 >>> x = layers.Conv2D(64, kernel_size=(3,3), strides=(1,1), padding="same")(x)
 >>> x = ReLU()(x)
 >>> x = layers.add([shortcut, x])
+
+```
 
 ![download](https://user-images.githubusercontent.com/59202700/207303627-1aed67c6-e4ad-4ca8-a639-20dc151670ab.png)
 
